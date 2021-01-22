@@ -1,0 +1,7 @@
+C:\Users\FURAGA\source\repos\CDullCS\CDullCS\bin\Debug\CDullCS.exe.config
+C:\Users\FURAGA\source\repos\CDullCS\CDullCS\bin\Debug\CDullCS.exe
+C:\Users\FURAGA\source\repos\CDullCS\CDullCS\bin\Debug\CDullCS.pdb
+C:\Users\FURAGA\source\repos\CDullCS\CDullCS\obj\Debug\CDullCS.csprojAssemblyReference.cache
+C:\Users\FURAGA\source\repos\CDullCS\CDullCS\obj\Debug\CDullCS.csproj.CoreCompileInputs.cache
+C:\Users\FURAGA\source\repos\CDullCS\CDullCS\obj\Debug\CDullCS.exe
+C:\Users\FURAGA\source\repos\CDullCS\CDullCS\obj\Debug\CDullCS.pdb
