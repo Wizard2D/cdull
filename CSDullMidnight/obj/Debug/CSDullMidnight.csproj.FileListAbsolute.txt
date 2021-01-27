@@ -1,0 +1,7 @@
+C:\Users\FURAGA\source\repos\CSDullMidnight\CSDullMidnight\bin\Debug\CSDullMidnight.exe.config
+C:\Users\FURAGA\source\repos\CSDullMidnight\CSDullMidnight\bin\Debug\CSDullMidnight.exe
+C:\Users\FURAGA\source\repos\CSDullMidnight\CSDullMidnight\bin\Debug\CSDullMidnight.pdb
+C:\Users\FURAGA\source\repos\CSDullMidnight\CSDullMidnight\obj\Debug\CSDullMidnight.csprojAssemblyReference.cache
+C:\Users\FURAGA\source\repos\CSDullMidnight\CSDullMidnight\obj\Debug\CSDullMidnight.csproj.CoreCompileInputs.cache
+C:\Users\FURAGA\source\repos\CSDullMidnight\CSDullMidnight\obj\Debug\CSDullMidnight.exe
+C:\Users\FURAGA\source\repos\CSDullMidnight\CSDullMidnight\obj\Debug\CSDullMidnight.pdb
