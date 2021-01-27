@@ -10,7 +10,7 @@ namespace CSDullMidnight.Main
 {
     class Transpiler
     {
-        Parser psr = new Parser();
+        private Parser psr = new Parser();
         public string TranspileToCPP(AST tree)
         {
             string fullCode = "#include <iostream>\n";

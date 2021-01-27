@@ -12,13 +12,26 @@ namespace CSDullMidnight.Main
         public AST parseTokens(List<tokens> tkns, string code)
         {
             AST tree = new AST();
-            
+            for (int n = 0; n < tkns.Count; n++)
+            {
+                Console.WriteLine((int)tokens.SCOPE_END+" "+(int)tkns[0]);
+            }
+            Console.WriteLine(tokens.SCOPE_END);
             for (int i = 0; i<tkns.Count; i++)
             {
                 if (i + 2 < tkns.Count)
                 {
                     Scopes scp = new Scopes();
                     tokens curToken = tkns[i];
+                    Console.WriteLine(tkns[i]);
+                    if(curToken == tokens.SCOPE_END)
+                    {
+                        Console.WriteLine("true");
+                    }
+                    else
+                    {
+                        Console.WriteLine("false");
+                    }
                     if (curToken == tokens.NUMBER && tkns[i + 1] == tokens.PLUS && tkns[i + 2] == tokens.NUMBER)
                     {
                         Root rtt = tree.addRoot("Add", scp.currentScope);
@@ -150,10 +163,10 @@ namespace CSDullMidnight.Main
                     }
                     if (curToken == tokens.SCOPE_END)
                     {
-                        tree.addRoot("EoS", scp.currentScope);
-                        scp.pop_out();
-                        
                         Console.WriteLine(tree.ToString() + "END");
+                        tree.addRoot("EoS", scp.currentScope);
+                        
+                        scp.pop_out();
                     }
                 }
 

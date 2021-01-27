@@ -1,0 +1,192 @@
+#include <iostream>
+auto congrats
+()
+{
+std::cout << "Hello Worldefeq";
+#include <iostream>
+auto congrats
+()
+{
+std::cout << "Hello Worldefeq";
+----Tokens----
+SCOPE_START
+LOG
+QUOT
+QUOT
+SCOPE_END
+#include <iostream>
+auto congrats
+()
+{
+std::cout << "Hello Worldefeq";
+----Tokens----
+SCOPE_START
+LOG
+QUOT
+QUOT
+SCOPE_END
+#include <iostream>
+auto congrats
+()
+{
+std::cout << "Hello Worldefeq";
+----Tokens----
+SCOPE_START
+LOG
+QUOT
+QUOT
+SCOPE_END
+#include <iostream>
+auto congrats
+()
+{
+std::cout << "Hello Worldefeq";
+----Tokens----
+SCOPE_START
+LOG
+QUOT
+QUOT
+SCOPE_END
+#include <iostream>
+auto congrats
+()
+{
+std::cout << "Hello Worldefeq";
+----Tokens----
+SCOPE_START
+LOG
+QUOT
+QUOT
+SCOPE_END
+#include <iostream>
+auto congrats
+()
+{
+std::cout << "Hello Worldefeq";
+----Tokens----
+SCOPE_START
+LOG
+QUOT
+QUOT
+SCOPE_END
+#include <iostream>
+auto congrats
+()
+{
+std::cout << "Hello Worldefeq";
+----Tokens----
+SCOPE_START
+LOG
+QUOT
+QUOT
+SCOPE_END
+#include <iostream>
+auto congrats
+()
+{
+std::cout << "Hello Worldefeq";
+----Tokens----
+SCOPE_START
+LOG
+QUOT
+QUOT
+SCOPE_END
+#include <iostream>
+auto congrats
+()
+{
+std::cout << "Hello Worldefeq";
+----Tokens----
+SCOPE_START
+LOG
+QUOT
+QUOT
+SCOPE_END
+#include <iostream>
+auto congrats
+()
+{
+std::cout << "Hello Worldefeq";
+----Tokens----
+SCOPE_START
+LOG
+QUOT
+QUOT
+SCOPE_END
+#include <iostream>
+auto congrats
+()
+{
+std::cout << "Hello Worldefeq";
+----Tokens----
+SCOPE_START
+LOG
+QUOT
+QUOT
+SCOPE_END
+#include <iostream>
+----Tokens----
+#include <iostream>
+----Tokens----
+#include <iostream>
+----Tokens----
+#include <iostream>
+----Tokens----
+#include <iostream>
+----Tokens----
+#include <iostream>
+----Tokens----
+#include <iostream>
+----Tokens----
+#include <iostream>
+----Tokens----
+#include <iostream>
+----Tokens----
+#include <iostream>
+----Tokens----
+#include <iostream>
+----Tokens----
+#include <iostream>
+auto congrats
+()
+{
+std::cout << "Hello Worldefeq";
+----Tokens----
+SCOPE_START
+LOG
+QUOT
+QUOT
+SCOPE_END
+#include <iostream>
+auto congrats
+()
+{
+std::cout << "Hello Worldefeq";
+----Tokens----
+SCOPE_START
+LOG
+QUOT
+QUOT
+SCOPE_END
+#include <iostream>
+auto congrats
+()
+{
+std::cout << "Hello Worldefeq";
+----Tokens----
+SCOPE_START
+LOG
+QUOT
+QUOT
+SCOPE_END
+#include <iostream>
+auto congrats
+()
+{
+std::cout << "Hello Worldefeq";
+----Tokens----
+SCOPE_START
+LOG
+QUOT
+QUOT
+SCOPE_END

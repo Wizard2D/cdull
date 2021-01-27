@@ -167,30 +167,35 @@ namespace CSDullMidnight.Main
                             {
                                 threechars += code[i + x];
                             }
+              
                             if (fivechars.Contains("start"))
                             {
+                                Console.WriteLine("HELeo");
                                 tkn.Add(tokens.SCOPE_START);
                             }
                             if (fourchars.Contains("void"))
                             {
                                 tkn.Add(tokens.VOID);
                             }
-                            if (threechars.Contains("end"))
-                            {
-                                tkn.Add(tokens.SCOPE_END);
-                            }
+                            
                             if (threechars.Contains("var"))
                             {
                                 tkn.Add(tokens.VARIABLE);
                             }
                             if (threechars.Contains("log"))
                             {
+                                Console.WriteLine("HEL");
                                 tkn.Add(tokens.LOG);
                             }
                         }
                         if (c == '+')
                         {
                             tkn.Add(tokens.PLUS);
+                        }
+                        if (c == '~')
+                        {
+                            Console.WriteLine("HELf");
+                            tkn.Add(tokens.SCOPE_END);
                         }
                         if (c == '-')
                         {
@@ -216,7 +221,7 @@ namespace CSDullMidnight.Main
                         {
                             tkn.Add(tokens.ASSIGN);
                         }
-                        if(c == '\n' || c == '\r' || c == '\t')
+                       if(c == '\n' || c == '\r' || c == '\t')
                         {
                             continue;
                         }
