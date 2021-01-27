@@ -44,68 +44,41 @@ namespace CSDullMidnight.Main
                 
                 char c = code[i];
                 if(c == '@')
-                {
                     tknState = state.COMMENT;
-                }
                 if (c == '"')
-                {
                     tknState = state.STRING;
                     tkn.Add(tokens.QUOT);
-                }
                 if (c != '@' && c != '"')
-                {
                     tknState = state.DEFAULT;
-                }
-                switch (tknState)
-                {
+                switch (tknState) {
                     case state.STRING:
                         i++;
                         while(c != '"')
-                        {
                             continue;
-                        }
                         tkn.Add(tokens.QUOT);
                         break;
                     case state.DEFAULT:
                         int outp = 0;
                         if(int.TryParse(char.ToString(c), out outp) == true)
-                        {
                             tkn.Add(tokens.NUMBER);
-                        }
                         if(c == '+')
-                        {
                             tkn.Add(tokens.PLUS);
-                        }
                         if (c == '-')
-                        {
                             tkn.Add(tokens.MINUS);
-                        }
                         if (c == '*')
-                        {
                             tkn.Add(tokens.MULTI);
-                        }
                         if (c == '/')
-                        {
                             tkn.Add(tokens.DIVIDE);
-                        }
                         if (c == '^')
-                        {
                             tkn.Add(tokens.POW);
-                        }
                         if (c == '%')
-                        {
                             tkn.Add(tokens.MOD);
-                        }
                         if (c == '=')
-                        {
                             tkn.Add(tokens.ASSIGN);
-                        }
                         break;
                     case state.COMMENT:
                         while(c != '\n')
-                        {
                             continue;
-                        }
                         break;
                 }
             }
@@ -119,131 +92,70 @@ namespace CSDullMidnight.Main
             {
                 char c = code[i];
                 if (c == '@')
-                {
                     tknState = state.COMMENT;
-                    
-                }
                 if (c == '"')
-                {
                     tknState = state.STRING;
                     tkn.Add(tokens.QUOT);
-                    
-                }
                 if (c != '@' && c != '"')
-                {
                     tknState = state.DEFAULT;
-                  
-                }
-                switch (tknState)
-                {
+                switch (tknState) {
                     case state.STRING:
-                       /* i++;
-                        while (c != '"')
-                        {
-                            continue;
-                        }
-                        tkn.Add(tokens.QUOT);*/
                         break;
                     case state.DEFAULT:
                         int outp = 0;
                         if (int.TryParse(char.ToString(c), out outp) == true)
-                        {
                             tkn.Add(tokens.NUMBER);
-                        }
                         if(i + 5 < code.Length)
                         {
                             string fivechars = "";
                             for(int x = 0; x < 5; x++)
-                            {
                                 fivechars += code[i + x];
-                            }
                             string fourchars = "";
                             for (int x = 0; x < 4; x++)
-                            {
                                 fourchars += code[i + x];
-                            }
                             string threechars = "";
                             for (int x = 0; x < 3; x++)
-                            {
                                 threechars += code[i + x];
-                            }
               
                             if (fivechars.Contains("start"))
-                            {
-                                Console.WriteLine("HELeo");
                                 tkn.Add(tokens.SCOPE_START);
-                            }
                             if (fourchars.Contains("void"))
-                            {
                                 tkn.Add(tokens.VOID);
-                            }
                             
                             if (threechars.Contains("var"))
-                            {
                                 tkn.Add(tokens.VARIABLE);
-                            }
                             if (threechars.Contains("log"))
-                            {
-                                Console.WriteLine("HEL");
                                 tkn.Add(tokens.LOG);
-                            }
                         }
                         if (c == '+')
-                        {
                             tkn.Add(tokens.PLUS);
-                        }
                         if (c == '~')
-                        {
-                            Console.WriteLine("HELf");
                             tkn.Add(tokens.SCOPE_END);
-                        }
                         if (c == '-')
-                        {
                             tkn.Add(tokens.MINUS);
-                        }
                         if (c == '*')
-                        {
                             tkn.Add(tokens.MULTI);
-                        }
                         if (c == '/')
-                        {
                             tkn.Add(tokens.DIVIDE);
-                        }
                         if (c == '^')
-                        {
                             tkn.Add(tokens.POW);
-                        }
                         if (c == '%')
-                        {
                             tkn.Add(tokens.MOD);
-                        }
                         if (c == '=')
-                        {
                             tkn.Add(tokens.ASSIGN);
-                        }
-                       if(c == '\n' || c == '\r' || c == '\t')
-                        {
+                        if(c == '\n' || c == '\r' || c == '\t')
                             continue;
-                        }
                         if (c == '"')
-                        {
                             tkn.Add(tokens.QUOT);
-                        }
                         if(c == '(')
-                        {
                             continue;
-                        }
                         if (c == ')')
-                        {
                             continue;
-                        }
-
+        
                         break;
                     case state.COMMENT:
                         while (c != '\n')
-                        {
                             continue;
-                        }
                         break;
                 }
             }
