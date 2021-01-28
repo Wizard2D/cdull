@@ -18,3 +18,13 @@ Output:
 ```
 Hello, world!
 ```
+Reality:
+
+```
+main start
+   log("Hello, World!");
+:
+```
+Output:
+```Hello, World!```
+(this is if you compile the generated C++ code)
