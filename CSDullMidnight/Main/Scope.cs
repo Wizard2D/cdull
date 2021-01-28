@@ -26,11 +26,10 @@ namespace CSDullMidnight.Main
     class Scope
     {
         public string scopeID;
-        public string[] symbols;
         public List<string> variables = new List<string>();
         public Scope()
         {
-           scopeID = Guid.NewGuid().ToString();
+            scopeID = Guid.NewGuid().ToString();
         }
     }
 }

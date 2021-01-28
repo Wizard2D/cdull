@@ -12,24 +12,15 @@ namespace CSDullMidnight
     {
         static void Main(string[] args)
         {
-            string toRun = "congrats start\n" +
-            "log(\"Hello Worldefeq\");\n" +
-            "~\n";
-            
-            Console.WriteLine(toRun);
-            Tokenizer tknzr = new Tokenizer();
-            List<tokens> tkn = tknzr.TokenizeWithKeywords(toRun);
-            Parser parser = new Parser();
-            AST tree = parser.parseTokens(tkn, toRun);
-            Transpiler tspl = new Transpiler();
-            string str = tspl.TranspileToCPP(tree);
-            str += "----Tokens----\n";
-            for(int i = 0; i<tkn.Count; i++)
-            {
-                str += tkn[i] + "\n";
-            }
-            File.AppendAllText("output.txt", str);
-            Console.ReadLine();
+            string input =
+            "main start\n" +
+                "log(\"Hello Worldefeq\");\n" +
+            ":\n";
+
+            List<tokens> tokens = new Tokenizer().TokenizeWithKeywords(input);
+            AST ast = new Parser().parseTokens(tokens, input);
+            string output = new Transpiler().TranspileToCPP(ast);
+            File.AppendAllText("output.txt", output);
         }
     }
 }
