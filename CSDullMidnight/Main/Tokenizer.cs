@@ -22,7 +22,8 @@ namespace CSDullMidnight.Main
         SCOPE_END,
         VOID,
         VARIABLE,
-        LOG
+        LOG,
+        CALLFUNC
     }
 
     class Tokenizer
@@ -96,7 +97,7 @@ namespace CSDullMidnight.Main
                     tknState = state.COMMENT;
                 if (c == '"')
                     tknState = state.STRING;
-                tkn.Add(tokens.QUOT);
+                
                 if (c != '@' && c != '"')
                     tknState = state.DEFAULT;
                 switch (tknState)
@@ -123,7 +124,8 @@ namespace CSDullMidnight.Main
                                 tkn.Add(tokens.SCOPE_START);
                             if (fourchars.Contains("void"))
                                 tkn.Add(tokens.VOID);
-
+                            if (fourchars.Contains("call"))
+                                tkn.Add(tokens.CALLFUNC);
                             if (threechars.Contains("var"))
                                 tkn.Add(tokens.VARIABLE);
                             if (threechars.Contains("log"))
@@ -149,7 +151,9 @@ namespace CSDullMidnight.Main
                         if (c == '\n' || c == '\r' || c == '\t')
                             continue;
                         if (c == '"')
+                        {
                             tkn.Add(tokens.QUOT);
+                        }
                         if (c == '(')
                             continue;
                         if (c == ')')

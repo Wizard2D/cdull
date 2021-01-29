@@ -12,6 +12,7 @@ namespace CSDullMidnight.Main
         public AST parseTokens(List<tokens> tkns, string code)
         {
             AST tree = new AST();
+            
             for (int i = 0; i < tkns.Count; i++)
             {
                 Scopes scp = new Scopes();
@@ -99,6 +100,7 @@ namespace CSDullMidnight.Main
                     MatchCollection matc = funcN.Matches(code);
                     for (int x = 0; x < matc.Count; x++)
                     {
+                        Console.WriteLine("x: " + x);
                         string trimmed = funcNT.Replace(matc[x].ToString(), "");
                         Root rtt = tree.addRoot("function", scp.currentScope);
                         rtt.addNode(trimmed);
@@ -111,13 +113,24 @@ namespace CSDullMidnight.Main
                     scp.push(scope);
                     tree.addRoot("SoS", scp.currentScope);
                 }
-
+                if (curToken == tokens.CALLFUNC)
+                {
+                    Regex cbbb = new Regex("(?:call\\s*\\S*)");
+                    Regex cbmf = new Regex("(?: call\\s*)");
+                    MatchCollection mcl = cbbb.Matches(code);
+                    for(int b = 0; b<mcl.Count; b++)
+                    {
+                        string funcName = cbmf.Replace(mcl[b].ToString(), "");
+                        Root rtt = tree.addRoot("Call", scp.currentScope);
+                        rtt.addNode(funcName);
+                    }
+                }
                 if (curToken == tokens.LOG)
                 {
                     Regex rgxrep = new Regex("[()\";]");
                     Regex rgxcp = new Regex("log\\S*\\s*\\S*");
                     MatchCollection trox = rgxcp.Matches(code);
-                    for (int k = 0; k < trox.Count; k++)
+                    for (int k = 1; k < trox.Count; k++)
                     {
 
                         string trm = trox[k].ToString().Replace("log", "");
@@ -140,6 +153,8 @@ namespace CSDullMidnight.Main
                 }
 
             }
+            for (int t = 0; t < tkns.Count; t++)
+                Console.WriteLine(tkns[t]);
             return tree;
         }
     }

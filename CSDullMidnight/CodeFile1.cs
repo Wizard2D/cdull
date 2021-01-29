@@ -13,14 +13,20 @@ namespace CSDullMidnight
         static void Main(string[] args)
         {
             string input =
+            "funfunc start\n" +
+            "log(\"Hoowwwoooo\");\n" +
+            ":\n" +
             "main start\n" +
                 "log(\"Hello Worldefeq\");\n" +
+                "call funfunc\n"+
             ":\n";
 
             List<tokens> tokens = new Tokenizer().TokenizeWithKeywords(input);
+            
             AST ast = new Parser().parseTokens(tokens, input);
             string output = new Transpiler().TranspileToCPP(ast);
-            File.AppendAllText("output.txt", output);
+            string newStr =  output.Replace("auto main", "int main");
+            File.AppendAllText("output.txt", newStr);
         }
     }
 }

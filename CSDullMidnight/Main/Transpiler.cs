@@ -16,16 +16,13 @@ namespace CSDullMidnight.Main
             for (int i = 0; i < tree.roots.Count; i++)
             {
                 List<Root> rts = tree.roots;
+                Console.WriteLine(rts[i].name);
                 if (rts[i].name == "function")
-                {
-                    Console.WriteLine(rts[i].nodes[0].hold);
-                    if (String.Equals("main ", rts[i].nodes[0].hold))
-                        Console.WriteLine("Hellloooo");
-                        //fullCode += "int main()";
-                    fullCode += "auto " + rts[i].nodes[0].hold + "() -> int";
-                }
+                    fullCode += "auto " + rts[i].nodes[0].hold + "()\n";
+                if (rts[i].name == "Call")
+                    fullCode += rts[i].nodes[0].hold+"()\n";
                 if (rts[i].name == "Assign")
-                    fullCode += "auto " + rts[i].nodes[0].hold + " = " + rts[i].nodes[1].hold;
+                    fullCode += "auto " + rts[i].nodes[0].hold + " = " + rts[i].nodes[1].hold+"\n";
                 if (rts[i].name == "SoS")
                     fullCode += "{\n";
                 if (rts[i].name == "Log")
