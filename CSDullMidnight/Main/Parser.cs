@@ -15,6 +15,7 @@ namespace CSDullMidnight.Main
             
             for (int i = 0; i < tkns.Count; i++)
             {
+                Console.WriteLine(tkns[i]);
                 Scopes scp = new Scopes();
                 tokens curToken = tkns[i];
 
@@ -97,13 +98,30 @@ namespace CSDullMidnight.Main
                 {
                     Regex funcN = new Regex("\\s*\\w+\\s*start\\s*");
                     Regex funcNT = new Regex("(?: start)");
+                    Regex funcParam = new Regex("\\S+\\s+start\\:.*");
+                    Regex funcParam1 = new Regex("\\s*\\w+\\s*start\\s*\\:\\s+");
+                    Regex omitParenthesis = new Regex("[()]");
+                    Regex varName = new Regex("var\\s+");
                     MatchCollection matc = funcN.Matches(code);
                     for (int x = 0; x < matc.Count; x++)
                     {
-                        Console.WriteLine("x: " + x);
-                        string trimmed = funcNT.Replace(matc[x].ToString(), "");
                         Root rtt = tree.addRoot("function", scp.currentScope);
+                        
+                        string trimmed = funcNT.Replace(matc[x].ToString(), "");
+                        
                         rtt.addNode(trimmed);
+                        if (funcParam.IsMatch(code) == true)
+                        {
+                            string almThere = funcParam1.Replace(code, "");
+                            string closer = omitParenthesis.Replace(almThere, "");
+                            string oooh = closer.Replace(',', ' ');
+                            string[] split = oooh.Split(' ');
+                            for (int q = 0; q < split.Length; q++)
+                            {
+                                string vName = varName.Replace(split[q], "");
+                                rtt.addNode(vName);
+                            }
+                        }
                     }
 
                 }
@@ -116,7 +134,7 @@ namespace CSDullMidnight.Main
                 if (curToken == tokens.CALLFUNC)
                 {
                     Regex cbbb = new Regex("(?:call\\s*\\S*)");
-                    Regex cbmf = new Regex("(?: call\\s*)");
+                    Regex cbmf = new Regex("(?:call\\s*)");
                     MatchCollection mcl = cbbb.Matches(code);
                     for(int b = 0; b<mcl.Count; b++)
                     {
@@ -130,18 +148,16 @@ namespace CSDullMidnight.Main
                     Regex rgxrep = new Regex("[()\";]");
                     Regex rgxcp = new Regex("log\\S*\\s*\\S*");
                     MatchCollection trox = rgxcp.Matches(code);
-                    for (int k = 1; k < trox.Count; k++)
-                    {
-
-                        string trm = trox[k].ToString().Replace("log", "");
+                    
+                        string trm = trox[0].ToString().Replace("log", "");
 
                         string trimmed = rgxrep.Replace(trm, "");
 
                         Root rtt = tree.addRoot("Log", scp.currentScope);
-
+                       
                         rtt.addNode(trimmed);
 
-                    }
+                    
 
                 }
 
@@ -151,10 +167,12 @@ namespace CSDullMidnight.Main
 
                     scp.pop_out();
                 }
-
+                if(curToken == tokens.CINCLUDE)
+                {
+                    tree.addRoot("cinc", scp.currentScope);
+                }
             }
-            for (int t = 0; t < tkns.Count; t++)
-                Console.WriteLine(tkns[t]);
+            
             return tree;
         }
     }

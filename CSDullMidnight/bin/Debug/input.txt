@@ -1,0 +1,9 @@
+&cin
+&in "C:\CdullTests\testheader.ch"
+funfunc start: (var arg, var2)
+log("Hello from here");
+:
+main start
+log("Hello from maine");
+call funfunc
+:
