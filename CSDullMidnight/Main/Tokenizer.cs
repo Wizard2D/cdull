@@ -23,7 +23,8 @@ namespace CSDullMidnight.Main
         VOID,
         VARIABLE,
         LOG,
-        CALLFUNC
+        CALLFUNC,
+        CINCLUDE
     }
 
     class Tokenizer
@@ -128,6 +129,8 @@ namespace CSDullMidnight.Main
                                 tkn.Add(tokens.CALLFUNC);
                             if (threechars.Contains("var"))
                                 tkn.Add(tokens.VARIABLE);
+                            if (threechars.Contains("cin"))
+                                tkn.Add(tokens.CINCLUDE);
                             if (threechars.Contains("log"))
                                 tkn.Add(tokens.LOG);
                             

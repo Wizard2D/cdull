@@ -1,59 +1,13 @@
-#include <iostream>
-auto congrats
+auto test
 ()
 {
-std::cout << "Hello Worldefeq";
+std::cout << "helloworld
+:";
 }
-#include <iostream>
-auto congrats
+}
+int main
 ()
 {
-std::cout << "Hello Worldefeq";
-#include <iostream>
-auto congrats
-(){
-std::cout << "Hello Worldefeq";
-#include <iostream>
-auto main
-(){
-std::cout << "Hello Worldefeq";
-#include <iostream>
-auto main
-(){
-std::cout << "Hello Worldefeq";
-}
-#include <iostream>
-auto main
-(){
-std::cout << "Hello Worldefeq";
-}
-#include <iostream>
-auto main
-(){
-std::cout << "Hello Worldefeq";
-}
-#include <iostream>
-auto main
-(){
-std::cout << "Hello Worldefeq";
-}
-#include <iostream>
-auto main
-(){
-std::cout << "Hello Worldefeq";
-}
-#include <iostream>
-auto main
-(){
-std::cout << "Hello Worldefeq";
-}
-#include <iostream>
-auto main
-(){
-std::cout << "Hello Worldefeq";
-}
-#include <iostream>
-auto main
-() -> int{
-std::cout << "Hello Worldefeq";
+std::cout << "Hello from";
+funfunc();
 }

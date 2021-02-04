@@ -12,6 +12,8 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -36,11 +38,15 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Main\settings.xml" />
     <Content Include="plans.txt" />
+    <Content Include="x64\libclang.dll" />
+    <Content Include="x86\libclang.dll" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CodeFile1.cs" />
     <Compile Include="Main\AST.cs" />
+    <Compile Include="Main\DelimiterSplit.cs" />
     <Compile Include="Main\IContext.cs" />
     <Compile Include="Main\Keyword.cs" />
     <Compile Include="Main\Parser.cs" />
@@ -50,7 +56,13 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Data.OracleClient">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.Data.OracleClient.dll</HintPath>
+    </Reference>
     <Reference Include="System.Text.RegularExpressions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Xml.Serialization" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
